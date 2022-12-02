@@ -69,7 +69,7 @@ impl FromStr for RoundResult {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let mut file = std::fs::File::open("src/day2/input.txt")?;
+    let file = std::fs::File::open("src/day2/input.txt")?;
     let mut reader = BufReader::new(file);
 
     println!("{}", part1(&mut reader)?);

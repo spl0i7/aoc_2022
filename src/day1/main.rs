@@ -1,11 +1,9 @@
-use std::io::{BufRead, BufReader, Seek, SeekFrom};
-use std::cmp::max;
-use std::collections::BinaryHeap;
+use std::io::{BufRead, BufReader};
 use std::error::Error;
 use std::fs::File;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let mut file = std::fs::File::open("src/day1/input.txt")?;
+    let file = std::fs::File::open("src/day1/input.txt")?;
     let mut reader = BufReader::new(file);
 
     let mut elf_calories = calories(&mut reader)?;
