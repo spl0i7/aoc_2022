@@ -1,5 +1,3 @@
-use sscanf::sscanf;
-
 const INPUT: &str = include_str!("input.txt");
 
 // [M]                     [N] [Z]
@@ -27,9 +25,9 @@ fn main() {
     let instructions: Vec<(usize, usize, usize)> = INPUT
         .split("\n")
         .into_iter()
-        .filter_map(|x| {
-            sscanf!(x, "move {} from {} to {}", usize, usize, usize).ok()
-        }).collect();
+        .map(|x| x.split(" ").filter_map(|x| x.parse().ok()).collect::<Vec<usize>>())
+        .map(|x| (x[0], x[1], x[2]))
+        .collect();
 
     println!("{}", part1(stacks.clone(), &instructions));
     println!("{}", part2(stacks.clone(), &instructions));
