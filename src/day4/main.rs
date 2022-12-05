@@ -37,9 +37,9 @@ fn overlapping(r1: &Range<i32>, r2: &Range<i32>) -> bool {
 }
 
 fn to_range(s: &str) -> Range<i32> {
-    let mut n: Vec<i32> = s.split("-")
+    let n: Vec<i32> = s.split("-")
         .filter_map(|x| x.parse().ok())
         .collect();
 
-    (n[0]..n[1])
+    n[0]..n[1]
 }
