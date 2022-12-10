@@ -42,6 +42,3 @@ path = "src/day9/main.rs"
 [[bin]]
 name = "day10"
 path = "src/day10/main.rs"
-
-[dependencies]
-sscanf = "0.4.0"
